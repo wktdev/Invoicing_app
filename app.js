@@ -80,7 +80,7 @@ app.get('/', function(req, res) {
 //_______________________________________________________END Read ( render ) invoice items to home page
 
 
-//_______________________________________________________BEGIN Send invoice data to Mongoose/Mongo
+//_______________________________________________________BEGIN file renders and downloads
 
 
 app.post('/', function(req, res) {
@@ -123,7 +123,7 @@ app.get('/download', function(req, res) {
     });
 });
 
-//_______________________________________________________END Send invoice data to Mongoose/Mongo
+//_______________________________________________________END file renders and downloads
 
 
 
