@@ -5,9 +5,10 @@ var path = require('path');
 var http = require('http');
 var bodyParser = require('body-parser');
 var app = express();
-var childProcess = require('child_process')
-var phantomjs = require('phantomjs')
-var binPath = phantomjs.path
+var childProcess = require('child_process');
+var phantomjs = require('phantomjs');
+var binPath = phantomjs.path;
+var fs = require("fs");
 
 var expressHbs = require('express-handlebars');
 
@@ -44,7 +45,11 @@ var docs = {
 
 
 
-// app code
+var date = new Date();
+var currentDate = (date.getUTCMonth() + 1) + "_" + date.getUTCDate() + "_" + date.getFullYear();
+var pdfName = "public/invoices/invoice_" + currentDate + ".pdf";
+
+
 
 
 
@@ -69,20 +74,6 @@ app.get('/', function(req, res) {
 
 
 
-app.get('/json', function(req, res) {
-
-    Invoice.find({}).sort('-date').exec(function(err, docs) {
-        return res.end(JSON.stringify(docs.slice(-1)[0]));
-        console.log(docs.slice(-1)[0]);
-        res.render('index', {
-            item: docs.slice(-1)[0]
-        });
-
-    });
-
-
-
-})
 
 
 
@@ -105,6 +96,8 @@ app.post('/', function(req, res) {
 
     docs = req.body;
 
+
+
     res.redirect('/');
 
 
@@ -112,7 +105,22 @@ app.post('/', function(req, res) {
 });
 
 app.get('/download', function(req, res) {
-    res.download('public/invoice/item.pdf', 'public/invoice/item.pdf');
+    var date = new Date();
+    var currentDate = (date.getUTCMonth() + 1) + "_" + date.getUTCDate() + "_" + date.getFullYear();
+    var pdfName = "public/invoices/invoice_" + currentDate + ".pdf";
+
+    res.download(pdfName, pdfName);
+
+    var path = "public/invoices/invoice_" + currentDate + ".json";
+    var data = JSON.stringify(docs)
+
+    fs.writeFile(path, data, function(error) {
+        if (error) {
+            console.error("write error:  " + error.message);
+        } else {
+            console.log("Successful Write to " + path);
+        }
+    });
 });
 
 //_______________________________________________________END Send invoice data to Mongoose/Mongo

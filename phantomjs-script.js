@@ -5,9 +5,14 @@ page.paperSize = {
 
 }
 page.open('http://localhost:3000', function(status) {
+
+    var date = new Date();
+    var currentDate = (date.getUTCMonth() + 1) + "_" + date.getUTCDate() + "_" + date.getFullYear();
+    var pdfName = "public/invoices/invoice_" + currentDate + ".pdf";
+
     console.log("Status: " + status);
     if (status === "success") {
-        page.render('public/invoice/item.pdf');
+        page.render(pdfName);
     }
     phantom.exit();
 });
