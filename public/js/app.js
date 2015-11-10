@@ -33,7 +33,7 @@ $(function() {
 
     //_________________________________________________END data structures
 
-    //________________________________________________________________START Datepicker
+    //_________________________________________________START Datepicker
 
     $('body').on('mousedown', ".date", function() {
         $(this).datepicker({
@@ -41,7 +41,7 @@ $(function() {
         });
     });
 
-    //________________________________________________________________END Datepicker
+    //_________________________________________________END Datepicker
 
 
 
@@ -130,7 +130,7 @@ $(function() {
                 }
 
 
-                window.setTimeout(downloadPDF, 3500);
+                window.setTimeout(downloadPDF, 4000);
 
 
 
@@ -175,7 +175,7 @@ $(function() {
     //_________________________________________________END submit invoice
 
 
-    //_______________________________________________________________START set date range
+    //_________________________________________________START set date range
 
     $('[name="start_date"]').datepicker({
         dateFormat: 'mm-dd-yy'
@@ -212,9 +212,9 @@ $(function() {
     })
 
 
-    //_______________________________________________________________END date range
+    //____________________________________________________END date range
 
-    //________________________________________________________________START Set rate enmass
+    //____________________________________________________START Set rate enmass
 
     function setRateAllFields() {
         var rate = undefined;
@@ -286,7 +286,7 @@ $(function() {
 
     setRateAllFields()
 
-    //________________________________________________________________START Set quantity enmass
+    //________________________________________________________START Set quantity enmass
 
     function setQuantityAllFields() {
         var quantity = undefined;
@@ -349,9 +349,9 @@ $(function() {
 
     setQuantityAllFields()
 
-    //________________________________________________________________END Set quantity enmass
+    //________________________________________________________END Set quantity enmass
 
-    //_________________________________________________________________START Autocomplete for student fields
+    //________________________________________________________START Autocomplete for student fields
     function autoComplete() {
         var students = [];
         $("body").on("blur", ".student", function() {
@@ -376,7 +376,7 @@ $(function() {
         return students
     }
     autoComplete()
-    //_________________________________________________________________END Autocomplete for student fields
+    //__________________________________________________________END Autocomplete for student fields
 
 
 
@@ -399,11 +399,11 @@ $(function() {
 
 
 
-    //________________________________________________________________START rate/quantity calculation
+    //____________________________________________________________START rate/quantity calculation
 
 
 
-    $("body").on("mouseover mouseout click ", ".invoice-item", function() {
+    $("body").on("keyup", ".invoice-item", function() {
         var $rateVal = $(this).find(".rate").val();
         var $quantityVal = $(this).find(".quantity").val();
 
@@ -441,7 +441,7 @@ $(function() {
 
 
 
-    //_______________________________________________________________END rate/quantity calculation
+    //_____________________________________________________________END rate/quantity calculation
 
 
 
