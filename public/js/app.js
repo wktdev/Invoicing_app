@@ -70,6 +70,17 @@ $(function() {
 
         $(this).closest(".invoice-item").after(invoiceClone);
 
+        var itemTotal = 0;
+        $(".total").each(function(item) {
+
+            itemTotal += +$(this).val();
+
+
+        })
+
+        $(".totals-total").val(itemTotal)
+
+
     })
 
     //_________________________________________________END copy item
