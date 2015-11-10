@@ -315,8 +315,9 @@ $(function() {
     }
 
     setRateAllFields()
+    //____________________________________________________END Set rate enmass
 
-    //________________________________________________________START Set quantity enmass
+    //____________________________________________________START Set quantity enmass
 
     function setQuantityAllFields() {
         var quantity = undefined;
