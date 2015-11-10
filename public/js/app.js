@@ -70,8 +70,10 @@ $(function() {
 
         $(this).closest(".invoice-item").after(invoiceClone);
 
+
+        //________________________BEGIN Updates Total-totals
         var itemTotal = 0;
-        $(".total").each(function(item) {
+        $(".total").each(function() {
 
             itemTotal += +$(this).val();
 
@@ -79,6 +81,23 @@ $(function() {
         })
 
         $(".totals-total").val(itemTotal)
+        //_______________________END Updates Total-totals
+
+
+
+        //_______________________BEGIN Updates Quantity totals
+
+        var quantTotal = 0;
+        $(".quantity").each(function() {
+
+            quantTotal += +$(this).val();
+
+
+        })
+
+        $(".quantity-total").val(quantTotal)
+
+        //_______________________END Updates Quantity totals
 
 
     })
