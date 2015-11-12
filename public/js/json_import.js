@@ -22,6 +22,7 @@ $(function() {
             }
 
             reader.readAsText(item);
+            $("#fileInput")[0].value = '';
 
         } else {
             console.log("Not a JSON file");
