@@ -151,6 +151,7 @@ $(function() {
         newInvoice.startDate = $("input[name='start_date']").val()
         newInvoice.endDate = $("input[name='end_date']").val()
         newInvoice.totalHours = $(".quantity-total").val()
+
         newInvoice.totalPayment = "$" + $(".totals-total").val()
 
 

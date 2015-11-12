@@ -42,10 +42,16 @@ $(function() {
         $("input[name='start_date']").val(data.startDate);
         $("input[name='end_date']").val(data.endDate);
         $(".quantity-total").val(data.totalHours);
+
         $(".totals-total").val(data.totalPayment);
 
         var numberOfEntries = data.entries;
 
+        if (data.totalPayment[0] === "$") {
+            var totalPaymentWithRemovedDollarSignDuplicate = data.totalPayment.substring(1);
+        }
+
+        data.totalPayment = totalPaymentWithRemovedDollarSignDuplicate
 
         numberOfEntries.forEach(function(val, index, arr) {
 
