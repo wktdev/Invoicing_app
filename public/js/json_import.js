@@ -28,6 +28,8 @@ $(function() {
             console.log("Not a JSON file");
         }
 
+
+
     });
 
 
@@ -44,6 +46,24 @@ $(function() {
         $("input[name='end_date']").val(data.endDate);
         $(".quantity-total").val(data.totalHours);
         $(".totals-total").val(data.totalPayment);
+
+        var numberOfEntries = data.entries;
+
+
+        numberOfEntries.forEach(function(val, index, arr) {
+
+            if ("date" in val) {
+
+                $(".invoice-items").append('<div class="invoice-item"><ul><li class="offset"><input class="button copy" type="button" value="Copy"></li><li class="offset"><input class="button delete" type="button" value="Delete"></li><li class="offset"><input class="date" type="text" placeholder="Date" value=" ' + val.date + ' "></li><li class="offset"><input class="student" type="text" placeholder="Student" value=" ' + val.student + ' "></li><li class="offset"><input class="rate" type="text" placeholder="Rate" value=" ' + val.rate + ' "></li><li class="offset"><input class="quantity" type="text" placeholder="Quantity" value=" ' + val.quantity + ' "></li><li class="offset"><input class="total" type="text" placeholder="Total" value=" ' + val.total + ' "></li></ul><hr></div>')
+
+                console.log(val.date);
+            }
+
+
+
+        })
+
+
 
     }
 
