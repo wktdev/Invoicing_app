@@ -258,7 +258,7 @@ $(function() {
 
 
         while (currentDate <= end) {
-            formattedDate = $.datepicker.formatDate('mm-dd-yy', new Date(currentDate));
+            var formattedDate = $.datepicker.formatDate('mm-dd-yy', new Date(currentDate));
             console.log(formattedDate);
             $(".invoice-items").append(
                 '<div class="invoice-item"><ul><li class="offset"><input class="button copy" type="button" value="Copy"></li><li class="offset"><input class="button delete" type="button" value="Delete"></li><li class="offset"><input class="date" type="text" value=' + "'" + formattedDate + "'" + '></li><li class="offset"><input class="student" type="text" value=""></li><li class="offset"><input class="rate" type="text" value=""></li><li class="offset"><input class="quantity" type="text" value=""></li><li class="offset"><input class="total" type="text" value=""></li></ul><hr></div>'
