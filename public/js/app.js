@@ -155,7 +155,7 @@ $(function() {
         newInvoice.totalPayment = "$" + $(".totals-total").val()
 
 
-        for (var i = 0; i <= (lastIndexValue); i += 1) {
+        for (var i = 0; i < (lastIndexValue); i += 1) {
             var invoiceItem = Object.create(invoiceDataStructure)
 
             invoiceItem.DOM_id = i;
@@ -253,12 +253,10 @@ $(function() {
         var start = $('[name="start_date"]').datepicker('getDate');
         var end = $('[name="end_date"]').datepicker('getDate');
         var currentDate = new Date(start);
-
-
-
+        var formattedDate = undefined
 
         while (currentDate <= end) {
-            var formattedDate = $.datepicker.formatDate('mm-dd-yy', new Date(currentDate));
+            formattedDate = $.datepicker.formatDate('mm-dd-yy', new Date(currentDate));
             console.log(formattedDate);
             $(".invoice-items").append(
                 '<div class="invoice-item"><ul><li class="offset"><input class="button copy" type="button" value="Copy"></li><li class="offset"><input class="button delete" type="button" value="Delete"></li><li class="offset"><input class="date" type="text" value=' + "'" + formattedDate + "'" + '></li><li class="offset"><input class="student" type="text" value=""></li><li class="offset"><input class="rate" type="text" value=""></li><li class="offset"><input class="quantity" type="text" value=""></li><li class="offset"><input class="total" type="text" value=""></li></ul><hr></div>'
