@@ -1,3 +1,5 @@
+"use strict"
+
 $(function() {
 
 
@@ -9,12 +11,10 @@ $(function() {
 
         if (fileExtension === "json") {
 
-            reader = new FileReader();
+            var reader = new FileReader();
 
             reader.onload = function(e) {
                 var dataString = reader.result;
-
-
                 var data = JSON.parse(dataString);
                 appendData(data) // DOM appending function goes here
 
@@ -23,12 +23,9 @@ $(function() {
 
             reader.readAsText(item);
 
-
         } else {
             console.log("Not a JSON file");
         }
-
-
 
     });
 
