@@ -8,6 +8,7 @@
 		<!--<script src="http://livejs.com/live.js"></script>-->
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.js" charset="utf-8"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+		<script type='text/javascript' src="/js/json_import.js"></script>
 		<script type='text/javascript' src="/js/app.js"></script>
 		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 		<link rel="stylesheet" href="/css/app.css">
@@ -26,6 +27,7 @@
 				
 				
 				<div class="invoice-items">
+				<input class="loader-button" type="file" id="fileInput"/>
 					{{>invoice_item}}
 					
 				</div>
@@ -51,7 +53,10 @@
 			</div>
 		</div>
 		{{>footer}}
+
 	</div>
+		
+	
 </div>
 	
 </body>

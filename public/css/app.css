@@ -29,6 +29,21 @@ body{
 
 }
 
+.load-json{
+  text-align:center;
+  font-size:3em;
+  color:rgba(38, 37, 37, 0.8);
+  background-color:rgba(85, 0, 128, 0.47);
+  height:100px;
+  position:relative;
+  top:70px;
+}
+.loader-button{
+  position:relative;
+  top:-40px;
+  left:20px;
+
+}
 .app{
 position:relative;
 top:50px;
