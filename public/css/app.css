@@ -8,19 +8,23 @@ body{
 
 #loadingDiv{
   padding-top:150px;
-  background-repeat:no-repeat;
   margin:0 auto;
-  background-color:transparent;
-  width:300px;
+  width:250px;
 
 
 }
 
 #loadingDiv h1{
   position:relative;
-  left:-50px;
+
 }
 
+.spinner{
+  width:50px;
+  display:block;
+  margin:0 auto;
+
+}
 
 .background-image{
 /*  background-image: url("../imgs/background.png");*/

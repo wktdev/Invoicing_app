@@ -12,7 +12,7 @@ page.open('http://localhost:3000', function(status) {
 
     console.log("Status: " + status);
     if (status === "success") {
-        page.render(pdfName);
+        page.render("public/invoices/invoice_" + currentDate + ".pdf");
     }
     phantom.exit();
 });
